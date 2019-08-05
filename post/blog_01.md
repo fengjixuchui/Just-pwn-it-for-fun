@@ -25,7 +25,7 @@
 
 That's all. 让我们开始我们痛苦的浏览器之旅.
 
-![他都不会难受, 他只要自由.](../img/img_00/blog_00.png)
+![他都不会难受, 他只要自由.](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 ## 正文
 
@@ -44,7 +44,7 @@ That's all. 让我们开始我们痛苦的浏览器之旅.
 
 那么, 让我们来仔细分析这个漏洞吧, 从而触发漏洞(误).
 
-![冲呀](../img/img_00/blog_00.png)
+![冲呀](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 漏洞的分析很痛苦, 男人何必为苦男人, 所以我们挑一点简单的事情来做. 直接执行`shellcode`, 弹出计算器看看.
 
@@ -82,7 +82,7 @@ That's all. 让我们开始我们痛苦的浏览器之旅.
 ```
 接着, 让我们用一个动态图来进行验证.
 
-![](../img/img_01/blog_00.gif)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_00.gif)
 
 Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. 人生双问:
 
@@ -120,7 +120,7 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 是不是觉得很烦... 我也觉得, 没关系, 一图胜千言:
 
-![](../img/img_01/blog_01.gif)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_01.gif)
 
 之后让我们执行一下第四步, `dump`一下相关的信息:
 
@@ -171,7 +171,7 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 运行结果如下:
 
-![](../img/img_01/blog_02.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_02.png)
 
 可以看到我们找到了我们的`shellcode`地址(可以看到`nop`指令). 下面, 让小弟对以上的代码做一些解释.
 
@@ -194,13 +194,13 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 之后在`jmp rax`处下断点. 查看发生了啥.
 
-![](../img/img_01/blog_03.gif)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_03.gif)
 
 我们可以看到我们已经跳到`shellcode`去了, 但是并没有执行我们的`shellcode`, 程序就异常了. 所以, `tell me why? `.
 
 如果您还记得我前面说的`DEP`的话, 应该就能明白我们的`shellcode`为啥不能执行:
 > `shellcode`存放于数据区. 为不可执行堆.  
->> ![](../img/img_01/blog_04.png)   
+>> ![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_04.png)   
 
 然而机智如我们在前面就已经找到了我们的解决方法, 有请我们的`VirtualProtect`闪亮登场. 接下来我又会放一张`gif`图, 在那之前让我们用文字先描述一下我们想干啥:
 
@@ -223,7 +223,7 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 一早说好的`gif`图如下:
 
-![](../img/img_01/blog_05.gif)  
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_05.gif)  
 
 机智如我们早早的就弹出了计算器. 但是上面有些问题. 很多东西我们都是使用调试器手工做的, 显然我们需要将它转化为代码. 我们先来计算下我们手工做的事有哪些:
 
@@ -239,13 +239,13 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 首先, 前面我们有提到, 我们的`shelcode`存放于一个`Uint8Array`当中. 而这个对象的地址我们是可以泄露的. 让我们`dump`一下:
 
-![](../img/img_01/blog_06.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_06.png)
 
 很舒服的, 我们在这当中看到了一个`js.exe`的一个指针. 至于这个指针是干啥的, 此时此刻完全不重要, 让我们利用当前我们的所得, 推断一下我们要做的事:
 
 > [+] 如果我们能够泄露一个`Uint8Array`对象的地址, 我们就能获取一个关于`js.exe`的指针.  
 > [+] 如果我们可以泄露一个`js.exe`的指针. 那么我们就能够泄露`js.exe`的基地址. 偏移(`0x14fde8`)如下:
->> ![](../img/img_01/blog_07.png)    
+>> ![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_07.png)    
 
 于是乎, 让我们开开心心的写出如下代码:
 
@@ -257,14 +257,14 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 ```
 验证如下:
 
-![](../img/img_01/blog_08.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_08.png)
 
 关键是, 泄露出我们的`js.exe`有什么用呢. 让我们执行如下的命令:
 
 > [+] `!dh -a js`, 运行的结果片段如下:
->> ![](../img/img_01/blog_11.png)  
->> ![](../img/img_01/blog_10.png)
->> ![](../img/img_01/blog_12.png)
+>> ![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_11.png)  
+>> ![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_10.png)
+>> ![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_12.png)
 
 你可以在[这里](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-dh)查找到关于该命令的官方解释. 总之, 在高亮的部分你看到我们的`VirtualProtect`函数. 
 
@@ -330,7 +330,7 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 话讲的太少, 总会说不清楚. 让我们来看看如下的代码:
 
-![](../img/img_01/blog_13.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_13.png)
 
 我们得到我们的`0x9090909090909090`对应的double值为`-6.828527034422786e-229`, 所以我们构造如下代码:
 
@@ -356,10 +356,10 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 首先, 我们找到我们函数对象的地址: 
 
-![](../img/img_01/blog_15.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_15.png)
 
 接着, 由于函数对象由`JSFunction`管理, 所以我们可以打印出相应的信息.
-![](../img/img_01/blog_16.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_16.png)
 
 在`JSFunction`偏移为`0x30`的地方, 存放一个指针(黄色高亮的部分), 指向了我们生成的代码.
 
@@ -376,24 +376,24 @@ Bingo, 我们正确的执行了一个`shellcode`. 但是问题的关键来了. �
 
 验证如下:
 
-![](../img/img_01/blog_20.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_20.png)
 
 接着, 我们查看生成的代码:
 
-![](../img/img_01/blog_17.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_17.png)
 
 emmm, 显然, 赋值操作在`jit`里面也是由我们的`mov`指令完成. 注意看操作数(就是doble对应的16进制值):
 
 >  `6EB909090D48748h`.
 
 这一部分的内容我们可控. 所以我们假设一下, 我们的设置`rip`地址为`0x00000018dabd6619+2`. 则我们就找到了我们要的命令.
-![](../img/img_01/blog_18.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_18.png)
 
 总结一下就是, 我们可以通过操作数来冒充指令. 由于我们最大只能传送`8byte`的数据, 所以我们的程序指令一次不能超过`8byte`. 
 
 我们有哪些命令呢, 我找了一个[在线网站](https://defuse.ca/online-x86-assembler.htm#disassembly)转换了一下:
 
-![](../img/img_01/blog_14.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_14.png)
 
 从上面可以看到. 我们从`pop rcx`开始到`ret`指令, 总共只有`7 byte`, 所以是可以一次放完的.
 
@@ -425,7 +425,7 @@ emmm, 显然, 赋值操作在`jit`里面也是由我们的`mov`指令完成. 注
 
 验证一下我们的`ROP`链:
 
-![](../img/img_01/blog_19.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_19.png)
 
 然后我们再来看内存, 很舒服的我们就有了一个自己构建的`ROP`链. 接着我们想想怎么去用代码来找到`ROP`链. 我们可以看到:
 
@@ -437,7 +437,7 @@ emmm, 显然, 赋值操作在`jit`里面也是由我们的`mov`指令完成. 注
 
 将代码里面的`rip`控制到`rop`处, 运行一下:
 
-![](../img/img_01/blog_22.gif)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_22.gif)
 
 
 很好, 万事`OK`, 我们成功的运行到了我们的`ROP`链, 现在程序崩溃的原因只是因为我们的`rsp`里面的内容不对而已, 接下来的事就是如何构造参数(也就是如何填充`rsp`).
@@ -478,7 +478,7 @@ emmm, 显然, 赋值操作在`jit`里面也是由我们的`mov`指令完成. 注
 
 接下来进行我们的验证:
 
-![](../img/img_01/blog_23.gif)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_01/blog_23.gif)
 
 ## 相关链接
 

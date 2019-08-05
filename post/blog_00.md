@@ -23,7 +23,7 @@
 这个系列来源于我现在正在做的另外一个项目. 本来准备两个月之后一起发出来的, 但是由于一些不可抗力:
 
 >   比如电脑坏了, 得整点稿费买电脑....
->>  ![](../img/img_00/blog_00.png)
+>>  ![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 就提前放出来了. 如果不出意外的话, 这篇博客应该算是非常简陋的一份草稿. 后面估计还要大改.
 
@@ -49,12 +49,12 @@
 
 另外一个, `浏览器`的学习痛苦不堪(比如搭建`v8`.) 
 
-![v8表情包](../img/img_00/blog_00.png)
+![v8表情包](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 
 所以我想让这个博客尽量有趣一点, 我不会讲笑话, 所以会在博客里面穿插一些表情包或者冷笑话. 大概觉得你看到某个点会觉得难过的时候就会穿插一个这种...
 
-![](../img/img_00/blog_00.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 `详细 + 有趣 + 简单`, 大概就是我这个博客最初的目标了, 我本来准备加上`便于理解的`, 但是发现人和人的理解方式不太一样... 所以又不是很自信... 就舍掉了这个目标.
 
@@ -283,13 +283,13 @@
 
 学安全大概很容易饿死.
 
-![安全: 要饭](../img/img_00/blog_00.png)
+![安全: 要饭](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 但我其实不太懂这些... 我所知道的就是`just pwn it for fun...`.
 
 我是那种, 觉得一件事情有点难就会觉得麻烦或者无聊的人. 然而所做的事基本难度都比较大. 所以最后, 放一张每次挖洞挖到无聊的时候, 总会浮在脑海里的一张图. 给和我一样初学的小伙伴:
 
-![](../img/img_00/blog_02.png)
+![](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_02.png)
 
 ## 后续
 
@@ -297,7 +297,7 @@
 
 >   [+] 如果这些文章被喷的很惨的话,.. 除了[github](https://github.com/redogwu/Just-pwn-it-for-fun)和我的[个人博客](https://redogwu.github.io/)之外... [看雪](https://passport.kanxue.com/user-center-756587.htm)和[先知](https://xz.aliyun.com/u/12604)我应该是不会更新了...  
 >   [+] 接下来的日子, 我大概率不会做安全了, 所以我可能只有在我完成正经工作的闲暇之余写下安全相关的东西. 所以频率可能会放低.
->>  ![我什么都不知道, 我只是一只傻鸟](../img/img_00/blog_00.png)
+>>  ![我什么都不知道, 我只是一只傻鸟](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 ## 还有一点重要的事
 
@@ -309,7 +309,7 @@
 
 教程的话我想国内无论是同辈(同辈我所认识的都比我厉害)的亦或者是前辈, 他们都会更合适一些,。 加上网上有一些神奇的师傅们不厌其烦的分享他们的知识, 所以找起来会稍微麻烦一些, 但是查资料查的多了... 就能够慢慢的学会一点关于查资料的方法... 所以应该是问题不大的.
 
-![哭](../img/img_00/blog_00.png)
+![哭](https://github.com/redogwu/Just-pwn-it-for-fun/blob/master/img/img_00/blog_00.png)
 
 ## copyright
 
